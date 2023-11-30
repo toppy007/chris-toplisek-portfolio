@@ -1,6 +1,8 @@
-import * as React from "react"
+import React from "react";
+import { motion } from 'framer-motion';
 import { graphql } from "gatsby"
 import { Space, Container, Section, FlexList, Text, Logo } from "./ui"
+import { fadeInUpAnimation } from './animations';
 
 export function LogoItem(props) {
   if (!props.image) return null
@@ -14,6 +16,7 @@ export default function LogoList(props) {
   return (
     <Section paddingY={4}>
       <Container width="narrow">
+      <motion.div {...fadeInUpAnimation}>
         {props.text && (
           <Text center variant="lead">
             {props.text}
@@ -23,13 +26,14 @@ export default function LogoList(props) {
         <FlexList gap={4} variant="center">
           {props.logos.map(
             (logo) =>
-              logo && (
-                <li key={logo.id}>
+            logo && (
+              <li key={logo.id}>
                   <LogoItem {...logo} />
                 </li>
               )
-          )}
+              )}
         </FlexList>
+      </motion.div>
       </Container>
     </Section>
   )

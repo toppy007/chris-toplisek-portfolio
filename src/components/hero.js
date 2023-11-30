@@ -23,7 +23,7 @@ export default function Hero(props) {
     const slideInAnimation = {
       initial: { x: '100vw', opacity: 0 },
       animate: { x: 0, opacity: 1 },
-      transition: { duration: 1, type: 'spring', damping: 10, stiffness: 80 },
+      transition: { duration: 1, type: 'spring', damping: 12, stiffness: 80 },
     };
 
   return (
@@ -42,7 +42,14 @@ export default function Hero(props) {
           <Flex gap={4} variant="responsive">
             <Box width="half" />
           <Box width="half">
-          <motion.div {...slideInAnimation}>
+          <motion.div
+              {...slideInAnimation}
+              style={{
+                backgroundColor: 'rgba(0, 0, 0, 0.5)',
+                padding: '20px', 
+              
+              }}
+            >
             <Heading as="h1">
               {props.kicker && <Kicker>{props.kicker}</Kicker>}
               {props.h1}
