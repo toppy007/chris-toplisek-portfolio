@@ -1,5 +1,5 @@
 import { graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import { GatsbyImage, getImage} from "gatsby-plugin-image"
 import * as React from "react"
 import {
   Box,
@@ -13,18 +13,23 @@ import {
   Text,
 } from "./ui"
 
+import { backgroundImageContainer, textContainer } from "./hero.css"
+
 export default function Hero(props) {
   return (
-    <Section>
-      <Container>
-        <Flex gap={4} variant="responsive">
-          <Box width="half">
+    <Section >
+
             {props.image && (
-              <GatsbyImage
+              <GatsbyImage 
+                className={backgroundImageContainer}
                 alt={props.image.alt}
                 image={getImage(props.image.gatsbyImageData)}
               />
-            )}
+              )}
+
+            <Container className={textContainer}>
+            <Flex gap={4} variant="responsive">
+          <Box width="half">
           </Box>
           <Box width="half">
             <Heading as="h1">
