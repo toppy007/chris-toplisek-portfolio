@@ -15,38 +15,42 @@ import {
 } from "./ui"
 
 import { backgroundImageContainer, textContainer } from "./hero.css"
+import { fadeInUpAnimation } from './animations';
+
 
 export default function Hero(props) {
+
+    const slideInAnimation = {
+      initial: { x: '100vw', opacity: 0 },
+      animate: { x: 0, opacity: 1 },
+      transition: { duration: 1, type: 'spring', damping: 10, stiffness: 80 },
+    };
+
   return (
     <Section >
-          <motion.div
-            initial={{ opacity: 0, scale: 0.8, y: '-100vh' }} 
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            exit={{ opacity: 0, y: '-100vh' }} 
-            transition={{ duration: 1, type: 'spring', damping: 10, stiffness: 80 }}
-          >
-
-            {props.image && (
-              <GatsbyImage 
+        <motion.div {...fadeInUpAnimation}>
+          {props.image && (
+            <GatsbyImage 
               className={backgroundImageContainer}
               alt={props.image.alt}
               image={getImage(props.image.gatsbyImageData)}
-              />
-              )}
+            />
+          )}
+        </motion.div>
 
-              </motion.div>
-            <Container className={textContainer}>
-            <Flex gap={4} variant="responsive">
+        <Container className={textContainer}>
+          <Flex gap={4} variant="responsive">
+            <Box width="half" />
           <Box width="half">
-          </Box>
-          <Box width="half">
+          <motion.div {...slideInAnimation}>
             <Heading as="h1">
               {props.kicker && <Kicker>{props.kicker}</Kicker>}
               {props.h1}
             </Heading>
             <Subhead as="h2">{props.subhead}</Subhead>
-            <Text as="p">{props.text}</Text>
+              <Text as="p">{props.text}</Text>
             <ButtonList links={props.links} />
+          </motion.div>
           </Box>
         </Flex>
       </Container>
