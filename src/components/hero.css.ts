@@ -9,7 +9,7 @@ export const backgroundImageContainer = style({
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
-    maxHeight: '585px'
+    maxHeight: '655px'
   });
 
 export const textContainer = style({

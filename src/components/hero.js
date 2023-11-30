@@ -15,17 +15,10 @@ import {
 } from "./ui"
 
 import { backgroundImageContainer, textContainer } from "./hero.css"
-import { fadeInUpAnimation } from './animations';
+import { fadeInUpAnimation, slideInAnimation } from './animations';
 
 
 export default function Hero(props) {
-
-    const slideInAnimation = {
-      initial: { x: '100vw', opacity: 0 },
-      animate: { x: 0, opacity: 1 },
-      transition: { duration: 1, type: 'spring', damping: 12, stiffness: 80 },
-    };
-
   return (
     <Section >
         <motion.div {...fadeInUpAnimation}>

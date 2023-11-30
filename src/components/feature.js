@@ -11,19 +11,23 @@ import {
   Text,
   ButtonList,
 } from "./ui"
+import { fadeInUpAnimation } from './animations';
+import { motion } from 'framer-motion';
 
 export default function Feature(props) {
   return (
     <Section padding={4} background="muted">
       <Container>
+        <motion.div {...fadeInUpAnimation}>
+
         <Flex gap={4} variant="responsive">
           <Box width="half" order={props.flip ? 1 : null}>
             {props.image && (
               <GatsbyImage
-                alt={props.image.alt}
-                image={getImage(props.image.gatsbyImageData)}
+              alt={props.image.alt}
+              image={getImage(props.image.gatsbyImageData)}
               />
-            )}
+              )}
           </Box>
           <Box width="half">
             <Subhead>
@@ -34,6 +38,7 @@ export default function Feature(props) {
             <ButtonList links={props.links} />
           </Box>
         </Flex>
+        </motion.div>
       </Container>
     </Section>
   )

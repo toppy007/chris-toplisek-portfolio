@@ -4,3 +4,9 @@ export const fadeInUpAnimation = {
     exit: { opacity: 0, y: '-100vh' },
     transition: { duration: 1, type: 'spring', damping: 10, stiffness: 80 },
   };
+
+export const slideInAnimation = {
+    initial: { x: '100vw', opacity: 0 },
+    animate: { x: 0, opacity: 1 },
+    transition: { duration: 1, type: 'spring', damping: 12, stiffness: 80 },
+  };

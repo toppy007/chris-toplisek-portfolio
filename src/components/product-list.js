@@ -12,6 +12,8 @@ import {
   Icon,
   LinkList,
 } from "./ui"
+import { fadeInUpAnimation } from './animations';
+import { motion } from 'framer-motion';
 
 function Product(props) {
   return (
@@ -34,20 +36,22 @@ export default function ProductList(props) {
   return (
     <Section>
       <Container>
-        <Box center paddingY={4}>
-          <Heading>
-            {props.kicker && <Kicker>{props.kicker}</Kicker>}
-            {props.heading}
-          </Heading>
-          {props.text && <Text>{props.text}</Text>}
-        </Box>
-        <FlexList gap={4} variant="responsive">
-          {props.content.map((product) => (
-            <li key={product.id}>
-              <Product {...product} />
-            </li>
-          ))}
-        </FlexList>
+        <motion.div {...fadeInUpAnimation}>
+          <Box center paddingY={4}>
+            <Heading>
+              {props.kicker && <Kicker>{props.kicker}</Kicker>}
+              {props.heading}
+            </Heading>
+            {props.text && <Text>{props.text}</Text>}
+          </Box>
+          <FlexList gap={4} variant="responsive">
+            {props.content.map((product) => (
+              <li key={product.id}>
+                <Product {...product} />
+              </li>
+            ))}
+          </FlexList>
+        </motion.div>
       </Container>
     </Section>
   )
