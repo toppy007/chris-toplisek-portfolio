@@ -4,7 +4,6 @@ import Layout from "../components/layout"
 import * as sections from "../components/sections"
 import Fallback from "../components/fallback"
 import SEOHead from "../components/head"
-import { ScrollReveal } from 'gatsby-plugin-scroll-reveal';
 
 export default function Homepage(props) {
   const { homepage } = props.data
@@ -14,7 +13,7 @@ export default function Homepage(props) {
       {homepage.blocks.map((block) => {
         const { id, blocktype, ...componentProps } = block
         const Component = sections[blocktype] || Fallback
-        return <Component data-sal="slide-up" {...componentProps} />
+        return <Component {...componentProps} />
       })}
     </Layout>
   )

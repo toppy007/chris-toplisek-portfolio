@@ -1,4 +1,5 @@
 import { graphql } from "gatsby"
+import { motion } from 'framer-motion';
 import { GatsbyImage, getImage} from "gatsby-plugin-image"
 import * as React from "react"
 import {
@@ -18,15 +19,22 @@ import { backgroundImageContainer, textContainer } from "./hero.css"
 export default function Hero(props) {
   return (
     <Section >
+          <motion.div
+            initial={{ opacity: 0, scale: 0.8, y: '-100vh' }} 
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, y: '-100vh' }} 
+            transition={{ duration: 1, type: 'spring', damping: 10, stiffness: 80 }}
+          >
 
             {props.image && (
               <GatsbyImage 
-                className={backgroundImageContainer}
-                alt={props.image.alt}
-                image={getImage(props.image.gatsbyImageData)}
+              className={backgroundImageContainer}
+              alt={props.image.alt}
+              image={getImage(props.image.gatsbyImageData)}
               />
               )}
 
+              </motion.div>
             <Container className={textContainer}>
             <Flex gap={4} variant="responsive">
           <Box width="half">

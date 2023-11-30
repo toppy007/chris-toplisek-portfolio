@@ -5,7 +5,10 @@ export const backgroundImageContainer = style({
     position: "relative",
     backgroundSize: "cover",
     backgroundPosition: "center",
-    minWidth: theme.sizes.container
+    minWidth: theme.sizes.container,
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center',
   });
 
 export const textContainer = style({
