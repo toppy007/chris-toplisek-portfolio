@@ -43,6 +43,7 @@ export default function Header() {
                 text
                 description
                 icon {
+                  
                   alt
                   gatsbyImageData
                 }

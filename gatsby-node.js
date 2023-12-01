@@ -116,6 +116,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       id: ID!
       href: String
       text: String
+      image: HomepageImage
       ## DatoCMS
       originalId: String
       entityPayload: JSON
@@ -432,6 +433,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       entityPayload: JSON
       href: String
       text: String
+      image: HomepageImage
     }
 
     type DatoCmsNavItem implements Node & NavItem & HeaderNavItem {

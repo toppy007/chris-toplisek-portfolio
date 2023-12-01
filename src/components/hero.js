@@ -4,7 +4,6 @@ import { GatsbyImage, getImage} from "gatsby-plugin-image"
 import * as React from "react"
 import {
   Box,
-  ButtonList,
   Container,
   Flex,
   Heading,
@@ -12,13 +11,33 @@ import {
   Section,
   Subhead,
   Text,
+  FlexList,
+  Icon,
 } from "./ui"
 
 import { backgroundImageContainer, textContainer } from "./hero.css"
 import { fadeInUpAnimation, slideInAnimation } from './animations';
 
+export function LogoItem(props) {
+  console.log('LogoItem component executed.', props);
+  if (!props) return null
+  console.log(props)
+
+  const image = (props.gatsbyImageData)
+  console.log("url icon", image)
+  const alt = props.alt || '';
+  console.log("url alt", alt)
+
+  return (
+    <Icon alt={alt} image={props.gatsbyImageData} size="large" />
+  )
+}
 
 export default function Hero(props) {
+  props.links.forEach(link => {
+    console.log('Link:', link.image.gatsbyImageData);
+  });
+
   return (
     <Section >
         <motion.div {...fadeInUpAnimation}>
@@ -49,7 +68,22 @@ export default function Hero(props) {
             </Heading>
             <Subhead as="h2">{props.subhead}</Subhead>
               <Text as="p">{props.text}</Text>
-            <ButtonList links={props.links} />
+              <FlexList gap={3} variant="left">
+                {props.links.map(
+                  (logo) =>
+                  logo && (
+                    <motion.a
+                          whileHover={{ scale: 1.2 }}
+                          onHoverStart={e => {}}
+                          onHoverEnd={e => {}}
+                          >
+                    <li>
+                      <LogoItem {...logo.image} />
+                    </li>
+                    </motion.a>
+                    )
+                    )}
+              </FlexList>
           </motion.div>
           </Box>
         </Flex>
@@ -69,6 +103,11 @@ export const query = graphql`
       id
       href
       text
+      image {
+        id
+        gatsbyImageData
+        alt
+      }
     }
     image {
       id

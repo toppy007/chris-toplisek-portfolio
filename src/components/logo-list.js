@@ -27,9 +27,15 @@ export default function LogoList(props) {
           {props.logos.map(
             (logo) =>
             logo && (
+              <motion.a
+                    whileHover={{ scale: 1.2 }}
+                    onHoverStart={e => {}}
+                    onHoverEnd={e => {}}
+                    >
               <li key={logo.id}>
                   <LogoItem {...logo} />
                 </li>
+              </motion.a>
               )
               )}
         </FlexList>
