@@ -13,43 +13,40 @@ import {
   Text,
   FlexList,
   Icon,
+  NavLink,
 } from "./ui"
 
 import { backgroundImageContainer, textContainer } from "./hero.css"
 import { fadeInUpAnimation, slideInAnimation } from './animations';
 
-export function LogoItem(props) {
-  console.log('LogoItem component executed.', props);
+export function LogoItem(props, links) {
   if (!props) return null
   console.log(props)
 
-  const image = (props.gatsbyImageData)
-  console.log("url icon", image)
   const alt = props.alt || '';
-  console.log("url alt", alt)
 
   return (
-    <Icon alt={alt} image={props.gatsbyImageData} size="large" />
+    <NavLink to={props.href}>
+      <Icon alt={alt} image={props.image.gatsbyImageData} size="large" />
+    </NavLink>
   )
 }
 
 export default function Hero(props) {
-  props.links.forEach(link => {
-    console.log('Link:', link.image.gatsbyImageData);
-  });
-
   return (
     <Section >
+      <Container className={backgroundImageContainer} width="wide">
+
         <motion.div {...fadeInUpAnimation}>
           {props.image && (
             <GatsbyImage 
-              className={backgroundImageContainer}
-              alt={props.image.alt}
-              image={getImage(props.image.gatsbyImageData)}
+            className={backgroundImageContainer}
+            alt={props.image.alt}
+            image={getImage(props.image.gatsbyImageData)}
             />
-          )}
+            )}
         </motion.div>
-
+      </Container>
         <Container className={textContainer}>
           <Flex gap={4} variant="responsive">
             <Box width="half" />
@@ -72,17 +69,15 @@ export default function Hero(props) {
                 {props.links.map(
                   (logo) =>
                   logo && (
-                    <motion.a
-                          whileHover={{ scale: 1.2 }}
-                          onHoverStart={e => {}}
-                          onHoverEnd={e => {}}
-                          >
-                    <li>
-                      <LogoItem {...logo.image} />
-                    </li>
-                    </motion.a>
-                    )
-                    )}
+                  <motion.a
+                    whileHover={{ scale: 1.2 }}
+                    onHoverStart={e => {}}
+                    onHoverEnd={e => {}}
+                  >
+                     <LogoItem {...logo} />
+                  </motion.a>
+                  )
+                )}
               </FlexList>
           </motion.div>
           </Box>
