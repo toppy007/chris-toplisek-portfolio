@@ -1,24 +1,8 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { Menu, X } from "react-feather"
-import {
-  Container,
-  Flex,
-  FlexList,
-  Space,
-  NavLink,
-  Button,
-  InteractiveIcon,
-  Nudge,
-  VisuallyHidden,
-} from "./ui"
-import {
-  mobileNavOverlay,
-  mobileNavLink,
-  desktopHeaderNavWrapper,
-  mobileHeaderNavWrapper,
-  mobileNavSVGColorWrapper,
-} from "./header.css"
+import { Container, Flex, FlexList, Space, NavLink, Button, InteractiveIcon, Nudge, VisuallyHidden } from "./ui"
+import { mobileNavOverlay, mobileNavLink, desktopHeaderNavWrapper, mobileHeaderNavWrapper, mobileNavSVGColorWrapper, } from "./header.css"
 import NavItemGroup from "./nav-item-group"
 import BrandLogo from "./brand-logo"
 
@@ -81,7 +65,7 @@ export default function Header() {
             <BrandLogo />
           </NavLink>
           <nav>
-            <FlexList gap={4}>
+            <FlexList gap={4} style={{ marginRight: '168.4px' }}>
               {navItems &&
                 navItems.map((navItem) => (
                   <li key={navItem.id}>
@@ -100,6 +84,7 @@ export default function Header() {
           <div>{cta && <Button to={cta.href}>{cta.text}</Button>}</div>
         </Flex>
       </Container>
+      
       <Container className={mobileHeaderNavWrapper[isOpen ? "open" : "closed"]}>
         <Space size={2} />
         <Flex variant="spaceBetween">
