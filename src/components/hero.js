@@ -2,20 +2,8 @@ import { graphql } from "gatsby"
 import { motion } from 'framer-motion';
 import { GatsbyImage, getImage} from "gatsby-plugin-image"
 import * as React from "react"
-import {
-  Box,
-  Container,
-  Flex,
-  Heading,
-  Kicker,
-  Section,
-  Subhead,
-  Text,
-  FlexList,
-  Icon,
-  NavLink,
-} from "./ui"
-
+import { Box, Container, Flex, Heading, Kicker, Section, Subhead, Text, FlexList, Icon, NavLink, } from "./ui"
+import { theme } from "../theme.css"
 import { backgroundImageContainer, textContainer } from "./hero.css"
 import { fadeInUpAnimation, slideInAnimation } from './animations';
 
@@ -34,9 +22,8 @@ export function LogoItem(props, links) {
 
 export default function Hero(props) {
   return (
-    <Section >
+    <Section style={{ position: 'relative' }} >
       <Container className={backgroundImageContainer} width="wide">
-
         <motion.div {...fadeInUpAnimation}>
           {props.image && (
             <GatsbyImage 
@@ -47,16 +34,17 @@ export default function Hero(props) {
             )}
         </motion.div>
       </Container>
-        <Container className={textContainer}>
-          <Flex gap={4} variant="responsive">
+      <Container className={textContainer} style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0}}>
+          <Flex gap={4} style={{ height: '100%' }} variant="responsive">
             <Box width="half" />
-          <Box width="half">
+          <Box width="half" style={{ height: '100%' }}>
           <motion.div
               {...slideInAnimation}
               style={{
                 backgroundColor: 'rgba(0, 0, 0, 0.5)',
                 padding: '20px', 
-              
+                height: '100%',
+                marginBottom: theme.space[5]
               }}
             >
             <Heading as="h1">
