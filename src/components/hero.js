@@ -42,15 +42,16 @@ export default function Hero(props) {
               {...slideInAnimation}
               style={{
                 backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                padding: '20px', 
+                padding: '64px', 
                 height: '100%',
-                marginBottom: theme.space[5]
+                color: theme.colors.primary,
               }}
             >
             <Heading as="h1">
               {props.kicker && <Kicker>{props.kicker}</Kicker>}
               {props.h1}
             </Heading>
+            
             <Subhead as="h2">{props.subhead}</Subhead>
               <Text as="p">{props.text}</Text>
               <FlexList gap={3} variant="left">
