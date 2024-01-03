@@ -6,6 +6,7 @@ import { Box, Container, Flex, Heading, Kicker, Section, Subhead, Text, FlexList
 import { theme } from "../theme.css"
 import { backgroundImageContainer, textContainer } from "./hero.css"
 import { fadeInUpAnimation, slideInAnimation } from './animations';
+import BrandLogo from "./brand-logo"
 
 export function LogoItem(props, links) {
   if (!props) return null
@@ -47,11 +48,17 @@ export default function Hero(props) {
                 color: theme.colors.primary,
               }}
             >
-            <Heading as="h1">
+            <NavLink >
+              <BrandLogo />
+            </NavLink>
+      
+            <Text></Text>
+  
+            <Heading as="h1" >
               {props.kicker && <Kicker>{props.kicker}</Kicker>}
               {props.h1}
             </Heading>
-            
+
             <Subhead as="h2">{props.subhead}</Subhead>
               <Text as="p">{props.text}</Text>
               <FlexList gap={3} variant="left">

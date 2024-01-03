@@ -25,4 +25,8 @@ export const textContainer = style({
     padding: theme.space[5],
     maxWidth: theme.sizes.container
   });
+
+export const underlineHeading = style({
+    textDecoration: 'underline',
+  });
   
