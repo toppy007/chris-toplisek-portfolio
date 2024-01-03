@@ -3,7 +3,9 @@ import { graphql } from "gatsby"
 import { Container, Heading, FlexList, LinkList, Section, Box } from "./ui"
 import { LogoItem } from "./logo-list"
 
+
 export default function AboutLogoList(props) {
+
   return (
     <Section>
       <Container>
