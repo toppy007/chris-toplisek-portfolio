@@ -7,29 +7,26 @@ import { motion } from 'framer-motion';
 function Benefit(props) {
   console.log(props)
   return (
-  <Box width="third" padding={2} paddingY={2}>
-    <motion.div
-      whileHover={{ scale: 1.05 }}
-      onHoverStart={e => {}}
-      onHoverEnd={e => {}}
-    >
-    <ProjectButtom >
-      
-      {props.image && (
-        <GatsbyImage
-        alt={props.image.alt}
-        image={props.image.gatsbyImageData}
-        />
-        )}
-      <Space size={2} />
-      <Heading variant="subhead">{props.heading}</Heading>
-      <Text variant="lead">{props.href}</Text>
-      <Text variant="lead">{props.description}</Text>
-      
-      </ProjectButtom>
-        </motion.div>
+      <Box width="third" padding={2} paddingY={2}>
+        <motion.div
+          whileHover={{ scale: 1.05 }}
+          onHoverStart={e => {}}
+          onHoverEnd={e => {}}
+        >
+        <ProjectButtom >
+          {props.image && (
+            <GatsbyImage
+            alt={props.image.alt}
+            image={props.image.gatsbyImageData}
+            />
+            )}
+          <Space size={2} />
+          <Heading variant="subhead">{props.heading}</Heading>
+          <Text variant="lead">{props.href}</Text>
+          <Text variant="lead">{props.description}</Text>
+        </ProjectButtom>
+      </motion.div>
     </Box>
-
   )
 }
 
@@ -37,7 +34,6 @@ export default function BenefitList(props) {
   return (
     <Section>
       <Container>
-        
         <Box center>
           {props.heading && <Heading>{props.heading}</Heading>}
           {props.text && <Text variant="lead">{props.text}</Text>}
