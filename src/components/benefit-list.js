@@ -1,25 +1,35 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { Container, Section, FlexList, Box, Heading, Text, Space, Button } from "./ui"
+import { Container, Section, FlexList, Box, Heading, Text, Space, ProjectButtom} from "./ui"
+import { motion } from 'framer-motion';
 
 function Benefit(props) {
   console.log(props)
   return (
-    <Box width="third" padding={2} paddingY={2}>
-        <Button>
-        {props.image && (
-          <GatsbyImage
-            alt={props.image.alt}
-            image={props.image.gatsbyImageData}
-          />
+  <Box width="third" padding={2} paddingY={2}>
+    <motion.div
+      whileHover={{ scale: 1.05 }}
+      onHoverStart={e => {}}
+      onHoverEnd={e => {}}
+    >
+    <ProjectButtom >
+      
+      {props.image && (
+        <GatsbyImage
+        alt={props.image.alt}
+        image={props.image.gatsbyImageData}
+        />
         )}
-        </Button>
-        <Space size={2} />
-        <Heading variant="subhead">{props.heading}</Heading>
-        <Text variant="lead">{props.href}</Text>
-        <Text variant="lead">{props.description}</Text>
-      </Box>
+      <Space size={2} />
+      <Heading variant="subhead">{props.heading}</Heading>
+      <Text variant="lead">{props.href}</Text>
+      <Text variant="lead">{props.description}</Text>
+      
+      </ProjectButtom>
+        </motion.div>
+    </Box>
+
   )
 }
 

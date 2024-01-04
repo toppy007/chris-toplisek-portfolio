@@ -159,6 +159,10 @@ export function NavButtonLink({ ...props }) {
   return <Base as="button" cx={[styles.navButtonlink]} {...props} />
 }
 
+export function ProjectButtom({ ...props }) {
+  return <Base as="button" cx={[styles.buttonProjectlink]} {...props} />
+}
+
 export function Button({ variant = "primary", ...props }) {
   return <Base as={Link} cx={[styles.buttons[variant]]} {...props} />
 }

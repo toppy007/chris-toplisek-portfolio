@@ -34,11 +34,6 @@ export default function Header() {
               }
             }
           }
-          cta {
-            id
-            href
-            text
-          }
         }
       }
     }

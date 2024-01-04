@@ -184,6 +184,7 @@ export const order = styleVariants({ 0: 0, 1: 1, 2: 2, 3: 3 }, (order) => ({
     },
   },
 }))
+
 export const box = styleVariants({
   center: {
     display: "flex",
@@ -447,6 +448,24 @@ export const navButtonlink = style({
   },
 })
 
+export const buttonProjectlink = style({
+  color: "inherit",
+  fontSize: "inherit",
+  fontFamily: theme.fonts.text,
+  padding: theme.space[2],
+  background: "white",
+  border: '1px solid transparent',
+  textDecoration: "none",
+  transitionProperty: "color",
+  transitionDuration: "0.2s",
+  transitionTimingFunction: "ease-in-out",
+  ":hover": {
+    border: `1px solid ${theme.colors.active}`,
+    color: theme.colors.active,
+    cursor: "pointer",
+  },
+})
+
 export const ctaLink = style({
   color: "inherit",
   fontWeight: theme.fontWeights.bold,
@@ -546,6 +565,11 @@ export const backgrounds: Record<Backgrounds, string> = styleVariants({
     color: theme.colors.primary,
     backgroundColor: theme.colors.muted,
   },
+  white: {
+    color: theme.colors.text,
+    backgroundColor: theme.colors.white,
+  },
+
 })
 
 export const blockquote = style({
