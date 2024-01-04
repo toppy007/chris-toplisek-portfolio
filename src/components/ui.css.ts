@@ -624,7 +624,6 @@ export const visuallyHidden = style({
   width: "1px",
 })
 
-// for debugging only
 export const debug = style({
   outline: "1px solid tomato",
 })

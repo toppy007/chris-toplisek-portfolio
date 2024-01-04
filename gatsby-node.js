@@ -55,7 +55,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
     },
   })
 
-  // support DatoCMS logos as images
+
   actions.createFieldExtension({
     name: "recursiveImage",
     extend(options) {
@@ -243,7 +243,8 @@ exports.createSchemaCustomization = async ({ actions }) => {
     interface HomepageBenefit implements Node {
       id: ID!
       heading: String
-      text: String
+      href: String
+      description: String
       image: HomepageImage
     }
 
@@ -504,18 +505,6 @@ exports.createSchemaCustomization = async ({ actions }) => {
       entityPayload: JSON
     }
 
-    type DatoCmsHomepageCta implements Node & HomepageBlock & HomepageCta
-      @dontInfer {
-      originalId: String
-      entityPayload: JSON
-      blocktype: String @blocktype
-      kicker: String
-      heading: String
-      text: String
-      image: HomepageImage
-      links: [HomepageLink]
-    }
-
     type DatoCmsHomepageLogoList implements Node & HomepageBlock & HomepageLogoList
       @dontInfer {
       originalId: String
@@ -560,28 +549,6 @@ exports.createSchemaCustomization = async ({ actions }) => {
       heading: String
       text: String
       content: [HomepageBenefit]
-    }
-
-    type DatoCmsHomepageStat implements Node & HomepageStat @dontInfer {
-      id: ID!
-      value: String
-      label: String
-      heading: String
-    }
-
-    type DatoCmsHomepageStatList implements Node & HomepageBlock & HomepageStatList
-      @dontInfer {
-      id: ID!
-      originalId: String
-      entityPayload: JSON
-      blocktype: String @blocktype
-      kicker: String
-      heading: String
-      text: String
-      image: HomepageImage
-      icon: HomepageImage
-      content: [HomepageStat]
-      links: [HomepageLink]
     }
 
     type DatoCmsHomepageProduct implements Node & HomepageProduct @dontInfer {
