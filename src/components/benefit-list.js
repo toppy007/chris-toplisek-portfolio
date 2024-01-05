@@ -1,11 +1,11 @@
 import * as React from "react"
 import { graphql } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { Container, Section, FlexList, Box, Heading, Text, Space, ProjectButtom} from "./ui"
+import { Container, Section, FlexList, Box, Heading, Text, Space, ProjectButtom, Link} from "./ui"
 import { motion } from 'framer-motion';
 
 function Benefit(props) {
-  console.log(props)
+  console.log(props.href)
   return (
       <Box width="third" padding={2} paddingY={2}>
         <motion.div
@@ -14,12 +14,17 @@ function Benefit(props) {
           onHoverEnd={e => {}}
         >
         <ProjectButtom >
+          <Link to={props.href}>
+
+    
           {props.image && (
             <GatsbyImage
             alt={props.image.alt}
             image={props.image.gatsbyImageData}
             />
             )}
+
+          </Link>
           <Space size={2} />
           <Heading variant="subhead">{props.heading}</Heading>
           <Text variant="lead">{props.href}</Text>

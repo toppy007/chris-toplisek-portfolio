@@ -349,72 +349,6 @@ exports.createSchemaCustomization = async ({ actions }) => {
       footer: LayoutFooter
     }
 
-    interface AboutPage implements Node {
-      id: ID!
-      title: String
-      description: String
-      image: HomepageImage
-      content: [HomepageBlock]
-      # DatoCMS
-      entityPayload: JSON
-    }
-
-    interface AboutHero implements Node & HomepageBlock {
-      id: ID!
-      blocktype: String
-      heading: String
-      text: String
-      image: HomepageImage
-      # DatoCMS
-      originalId: String
-      entityPayload: JSON
-    }
-
-    interface AboutStat implements Node {
-      id: ID!
-      value: String
-      label: String
-    }
-
-    interface AboutStatList implements Node & HomepageBlock {
-      id: ID!
-      blocktype: String
-      content: [AboutStat]
-      # DatoCMS
-      originalId: String
-      entityPayload: JSON
-    }
-
-    interface AboutProfile implements Node {
-      id: ID!
-      image: HomepageImage
-      name: String
-      jobTitle: String
-    }
-
-    interface AboutLeadership implements Node & HomepageBlock {
-      id: ID!
-      blocktype: String
-      kicker: String
-      heading: String
-      subhead: String
-      content: [AboutProfile]
-      # DatoCMS
-      originalId: String
-      entityPayload: JSON
-    }
-
-    interface AboutLogoList implements Node & HomepageBlock {
-      id: ID!
-      blocktype: String
-      heading: String
-      links: [HomepageLink]
-      logos: [HomepageImage]
-      # DatoCMS
-      originalId: String
-      entityPayload: JSON
-    }
-
     interface Page implements Node {
       id: ID!
       slug: String!
@@ -585,77 +519,6 @@ exports.createSchemaCustomization = async ({ actions }) => {
     }
   `)
 
-  // CMS specific types for About page
-  actions.createTypes(/* GraphQL */ `
-    type DatoCmsAboutHero implements Node & AboutHero & HomepageBlock
-      @dontInfer {
-      id: ID!
-      blocktype: String @blocktype
-      originalId: String
-      entityPayload: JSON
-      heading: String
-      text: String
-      image: HomepageImage
-    }
-
-    type DatoCmsAboutStat implements Node & AboutStat @dontInfer {
-      id: ID!
-      value: String
-      label: String
-    }
-
-    type DatoCmsAboutStatList implements Node & AboutStatList & HomepageBlock
-      @dontInfer {
-      id: ID!
-      blocktype: String @blocktype
-      originalId: String
-      entityPayload: JSON
-      content: [AboutStat]
-    }
-
-    type DatoCmsAboutProfile implements Node & AboutProfile @dontInfer {
-      id: ID!
-      image: HomepageImage
-      name: String
-      jobTitle: String
-    }
-
-    type DatoCmsAboutLeadership implements Node & AboutLeadership & HomepageBlock
-      @dontInfer {
-      id: ID!
-      blocktype: String @blocktype
-      originalId: String
-      entityPayload: JSON
-      kicker: String
-      heading: String
-      subhead: String
-      content: [AboutProfile]
-    }
-
-    type DatoCmsAboutLogoList implements Node & AboutLogoList & HomepageBlock
-      @dontInfer {
-      id: ID!
-      blocktype: String @blocktype
-      originalId: String
-      entityPayload: JSON
-      heading: String
-      links: [HomepageLink]
-      logos: [HomepageImage]
-    }
-
-    type DatoCmsAboutpage implements Node & AboutPage @dontInfer {
-      id: ID!
-      title: String @proxy(from: "entityPayload.attributes.metadata.title")
-      description: String
-        @proxy(from: "entityPayload.attributes.metadata.description")
-      image: HomepageImage
-        @link(by: "originalId", from: "entityPayload.attributes.metadata.image")
-      content: [HomepageBlock]
-      entityPayload: JSON
-      originalId: String
-    }
-  `)
-
   // Layout types
   actions.createTypes(/* GraphQL */ `
     type DatoCmsLayoutheader implements Node & LayoutHeader @dontInfer {
@@ -701,7 +564,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       description: String
         @proxy(from: "entityPayload.attributes.metadata.description")
       image: HomepageImage
-        @link(by: "originalId", from: "entityPayload.attributes.metadata.image")
+        @proxy(from: "entityPayload.attributes.metadata.image")
       html: String! @richText
       body: DatoCmsDatoCmsPageBodyStructuredText
     }
