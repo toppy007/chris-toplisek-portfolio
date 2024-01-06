@@ -5,7 +5,6 @@ import { Container, Section, FlexList, Box, Heading, Text, Space, ProjectButtom,
 import { motion } from 'framer-motion';
 
 function Benefit(props) {
-  console.log(props.href)
   return (
       <Box width="third" padding={2} paddingY={2}>
         <motion.div
