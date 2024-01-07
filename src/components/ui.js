@@ -19,24 +19,6 @@ export function Container({ width = "normal", ...props }) {
   return <Base cx={[styles.containers[width]]} {...props} />
 }
 
-export function Label({ 
-  variant = "body",
-  center = false,
-  bold = false,
-  ...props 
-}) {
-  return <Text as="label" cx={[
-    styles.text[variant],
-    center && styles.text.center,
-    bold && styles.text.bold,
-  ]}
-  {...props} />;
-}
-
-export function Input({ ...props }) {
-  return <Box as="input" className={styles.section} {...props} />
-}
-
 export function Flex({
   variant,
   gap = 3,

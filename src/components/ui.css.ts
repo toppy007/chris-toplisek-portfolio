@@ -177,6 +177,7 @@ export const radii = styleVariants(theme.radii, (borderRadius) => ({
   overflow: "hidden",
   borderRadius,
 }))
+
 export const order = styleVariants({ 0: 0, 1: 1, 2: 2, 3: 3 }, (order) => ({
   "@media": {
     [media.small]: {
@@ -430,21 +431,6 @@ export const navlink = style({
     color: theme.colors.active,
   },
 })
-
-const inputBase = {
-  width: "100%", // Make the input stretch across the screen
-  color: "inherit",
-  fontSize: "inherit",
-  fontFamily: theme.fonts.text,
-  padding: "8px", // Adjust padding as needed
-  background: "none",
-  border: "1px solid", // Add border styles as needed
-  borderColor: theme.colors.primary, // Adjust border color as needed
-  borderRadius: "4px", // Adjust border radius as needed
-  transitionProperty: "border-color",
-  transitionDuration: "0.2s",
-  transitionTimingFunction: "ease-in-out",
-};
 
 export const navButtonlink = style({
   color: "inherit",

@@ -16,6 +16,7 @@
   "dependencies": {
     "@fontsource/dm-mono": "^5.0.17",
     "@fontsource/dm-sans": "^5.0.17",
+    "@formspree/react": "^2.5.1",
     "@vanilla-extract/babel-plugin": "^1.2.0",
     "@vanilla-extract/css": "^1.14.0",
     "@vanilla-extract/css-utils": "^0.1.3",

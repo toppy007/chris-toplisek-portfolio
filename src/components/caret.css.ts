@@ -1,4 +1,5 @@
 import { style, styleVariants } from "@vanilla-extract/css"
+
 const caretBase = style({
   transitionProperty: "transform",
   transitionDuration: "0.15s",
