@@ -5,7 +5,6 @@ import { colors } from "../colors.css"
 export const form = style({
   textAlign: "left",
   maxWidth: "100%",
-  margin: "1rem 0",
 });
 
 export const formElement = style({
@@ -13,7 +12,7 @@ export const formElement = style({
   fontSize: "inherit",
   border: "none",
   width: "100%",
-  marginTop: theme.space[3],
+  marginTop: theme.space[2],
   background: colors.primary,
   padding: theme.space[3],
 
@@ -24,7 +23,7 @@ export const textarea = style({
   fontSize: "inherit",
   border: "none",
   width: "100%",
-  marginTop: theme.space[3],
+  marginTop: theme.space[2],
   background: colors.primary,
   padding: theme.space[3],
 });

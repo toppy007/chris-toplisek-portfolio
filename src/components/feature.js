@@ -1,48 +1,29 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import { GatsbyImage, getImage } from "gatsby-plugin-image"
-import {
-  Container,
-  Section,
-  Flex,
-  Box,
-  Subhead,
-  Kicker,
-  Text,
-  ButtonList,
-} from "./ui"
-import { fadeInUpAnimation } from './animations';
-import { motion } from 'framer-motion';
+import { VerticalTimelineElement }  from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
+import { Heading, Text, Logo, Box, Flex } from "./ui"
 
 export default function Feature(props) {
   return (
-    <Section padding={4} background="muted">
-      <Container>
-        <motion.div {...fadeInUpAnimation}>
-
-        <Flex gap={4} variant="responsive">
-          <Box width="half" order={props.flip ? 1 : null}>
-            {props.image && (
-              <GatsbyImage
-              alt={props.image.alt}
-              image={getImage(props.image.gatsbyImageData)}
-              />
-              )}
-          </Box>
-          <Box width="half">
-            <Subhead>
-              {props.kicker && <Kicker>{props.kicker}</Kicker>}
-              {props.heading}
-            </Subhead>
-            <Text variant="lead">{props.text}</Text>
-            <ButtonList links={props.links} />
+      <VerticalTimelineElement
+        className="vertical-timeline-element--education"
+        contentStyle={{ background: '#fff', borderTop: '4px solid orange' }}
+        contentArrowStyle={{ borderRight: '7px solid  #fff' }}
+        iconStyle={{ background: '#ff7f00', color: '#fff' }}
+        >
+        <Flex variant="start">
+          <Logo alt={props.alt} image={props.image.gatsbyImageData} size="medium"/> 
+          <Box >
+            <Heading>{props.heading}</Heading>
+            <Text>
+              {props.text}
+            </Text>
           </Box>
         </Flex>
-        </motion.div>
-      </Container>
-    </Section>
-  )
-}
+      </VerticalTimelineElement>
+    )
+  }
 
 export const query = graphql`
   fragment HomepageFeatureContent on HomepageFeature {

@@ -38,11 +38,8 @@ export default function BenefitList(props) {
   return (
     <Section>
       <Container>
-        <Box center>
-          {props.heading && <Heading>{props.heading}</Heading>}
-          {props.text && <Text variant="lead">{props.text}</Text>}
-        </Box>
-        <Space size={3} />
+        <Text center variant="lead"> {props.text} </Text>
+        <Space size={4} />
         <FlexList gutter={3} variant="start" responsive wrap>
           {props.content.map((benefit) => (
             <Benefit key={benefit.id} {...benefit} />

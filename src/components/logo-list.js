@@ -19,11 +19,7 @@ export default function LogoList(props) {
     <Section paddingY={4}>
       <Container width="narrow">
       <motion.div {...fadeInUpAnimation}>
-        {props.text && (
-          <Text center variant="lead">
-            {props.text}
-          </Text>
-        )}
+        <Text center variant="lead"> {props.text} </Text>
         <Space size={4} />
         <FlexList gap={4} variant="center">
           {props.logos.map(

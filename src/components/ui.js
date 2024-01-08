@@ -56,6 +56,7 @@ export function Box({
   radius,
   center = false,
   order,
+  paddingX,
   cx: _cx = [],
   ...props
 }) {
@@ -66,6 +67,7 @@ export function Box({
         background && styles.backgrounds[background],
         padding && styles.padding[padding],
         paddingY && styles.paddingY[paddingY],
+        paddingX && styles.paddingX[paddingX],
         radius && styles.radii[radius],
         center && styles.box.center,
         order && styles.order[order],

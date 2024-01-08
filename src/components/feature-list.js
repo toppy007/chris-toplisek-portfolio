@@ -1,24 +1,26 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import { Container, Box, Kicker, Heading, Text } from "./ui"
+import { Section, Container, Box, Space, Text } from "./ui"
+import { VerticalTimeline }  from 'react-vertical-timeline-component';
+import 'react-vertical-timeline-component/style.min.css';
 import Feature from "./feature"
 
 export default function FeatureList(props) {
+
   return (
-    <Container width="fullbleed">
-      <Box background="muted" radius="large">
-        <Box center paddingY={5}>
-          <Heading>
-            {props.kicker && <Kicker>{props.kicker}</Kicker>}
-            {props.heading}
-          </Heading>
-          {props.text && <Text>{props.text}</Text>}
+    <Section paddingY={4}>
+      <Container width="narrow">
+        <Text center variant="lead"> {props.text} </Text>
+        <Space size={4} />    
+        <Box paddingX={5}>
+          {props.content.map((feature, i) => (
+          <VerticalTimeline layout={ "2-column-left" } >
+            <Feature key={feature.id} {...feature} />
+          </VerticalTimeline>
+          ))}
         </Box>
-        {props.content.map((feature, i) => (
-          <Feature key={feature.id} {...feature} flip={Boolean(i % 2)} />
-        ))}
-      </Box>
-    </Container>
+      </Container>
+    </Section>
   )
 }
 
