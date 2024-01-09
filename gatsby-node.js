@@ -190,6 +190,8 @@ exports.createSchemaCustomization = async ({ actions }) => {
       id: ID!
       blocktype: String
       heading: String
+      year: String
+      about: String
       kicker: String
       text: String
       image: HomepageImage
@@ -391,6 +393,8 @@ exports.createSchemaCustomization = async ({ actions }) => {
       originalId: String
       blocktype: String @blocktype
       heading: String
+      year: String
+      about: String
       kicker: String
       text: String
       image: HomepageImage
