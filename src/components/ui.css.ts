@@ -359,11 +359,11 @@ export const text: Record<TextVariants, string> = styleVariants({
     margin0,
     {
       marginBottom: theme.space[2],
+      color: theme.colors.active,
       fontSize: theme.fontSizes[1],
-      fontWeight: theme.fontWeights.semibold,
       letterSpacing: theme.letterSpacings.wide,
       textTransform: "uppercase",
-      fontStyle: "normal",
+      fontWeight: theme.fontWeights.bold,
     },
   ],
   stat: [
@@ -379,7 +379,7 @@ export const text: Record<TextVariants, string> = styleVariants({
     margin0,
     {
       fontWeight: theme.fontWeights.bold,
-      fontSize: theme.fontSizes[4],
+      fontSize: theme.fontSizes[1],
       lineHeight: theme.lineHeights.heading,
     },
   ],

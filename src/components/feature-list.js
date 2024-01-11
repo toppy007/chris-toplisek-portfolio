@@ -10,8 +10,7 @@ export default function FeatureList(props) {
   return (
     <Section paddingY={4}>
       <Container width="narrow">
-        <Text center variant="lead"> {props.text} </Text>
-        <Space size={4} />    
+        <Text center variant="lead"> {props.text} </Text> 
         <Box paddingX={5}>
           {props.content.map((feature, i) => (
           <VerticalTimeline layout={ "2-column-left" } >

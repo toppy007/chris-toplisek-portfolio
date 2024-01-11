@@ -18,12 +18,11 @@ export default function Feature(props) {
           <Icon alt={props.alt} image={props.image.gatsbyImageData} size="Large"/> 
           </Box>
           <Box >
-            <Subhead >{props.heading}</Subhead>
-            <Text variant="bold">{props.kicker}</Text>
-            <Text>{props.year}</Text>
-            <Text>{props.about}</Text>
-            <Text variant="bold"> {props.text}</Text>
-            <Text>{props.links.text}</Text>
+            <Text variant="caps" >{props.heading}</Text>
+            <Text variant="bold" >{props.kicker}</Text>
+            <Text variant="statLabel" >{props.year}</Text>
+            <Text variant="small"> {props.text}</Text>
+            <Text >{props.links.text}</Text>
             {props.links &&
               props.links.map((link) => (
                 <Box key={link.id}>

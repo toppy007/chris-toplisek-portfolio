@@ -61,6 +61,7 @@ export default function Hero(props) {
 
             <Subhead as="h2">{props.subhead}</Subhead>
               <Text as="p">{props.text}</Text>
+              
               <FlexList gap={3} variant="left">
                 {props.links.map(
                   (logo) =>
