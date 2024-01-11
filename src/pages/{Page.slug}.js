@@ -1,4 +1,7 @@
 import * as React from "react"
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import { Container, Box, Heading } from "../components/ui"
@@ -6,20 +9,35 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import SEOHead from "../components/head"
 
 export default function Page(props) {
-  console.log(props)
+  console.log('this is for the corusel', props)
   const { page } = props.data
+  console.log('pictures', page.pictures)
+
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
 
   return (
     <Layout>
       <Box paddingY={5}>
         <Container width="narrow">
+        <Slider {...settings}>
+          {page.pictures.map((picture, index) => (
+            <Box key={index}>
+              <GatsbyImage
+                alt={picture.alt}
+                image={picture.image.gatsbyImageData}
+              />
+            </Box>
+          ))}
+        </Slider>
+
+
           
-          {page.image.image && (
-            <GatsbyImage
-            alt={page.image.image.alt}
-            image={page.image.image.gatsbyImageData}
-            />
-            )}
           
           <Heading as="h1">{page.title}</Heading>
 
@@ -48,14 +66,17 @@ export const query = graphql`
       title
       slug
       description
-      image {
+      pictures {
         id
+        alt
         image {
-          alt
+          id
           gatsbyImageData
+          alt
         }
       }
       html
-    }
+    
   }
+}
 `

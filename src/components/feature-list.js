@@ -1,6 +1,6 @@
 import * as React from "react"
 import { graphql } from "gatsby"
-import { Section, Container, Box, Space, Text } from "./ui"
+import { Section, Container, Box, Text } from "./ui"
 import { VerticalTimeline }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import Feature from "./feature"

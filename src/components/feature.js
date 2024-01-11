@@ -2,7 +2,7 @@ import * as React from "react"
 import { graphql } from "gatsby"
 import { VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
-import { Subhead, Text, Box, Flex, NavLink, Icon} from "./ui"
+import { Text, Box, Flex, NavLink, Icon} from "./ui"
 
 export default function Feature(props) {
   console.log(props)

@@ -315,7 +315,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       slug: String!
       title: String
       description: String
-      image: HomepageImage
+      pictures: [HomepageImage]
       html: String!
       body: DatoCmsDatoCmsPageBodyStructuredText
     }
@@ -518,8 +518,8 @@ exports.createSchemaCustomization = async ({ actions }) => {
       title: String @proxy(from: "entityPayload.attributes.metadata.title")
       description: String
         @proxy(from: "entityPayload.attributes.metadata.description")
-      image: HomepageImage
-        @proxy(from: "entityPayload.attributes.metadata.image")
+      pictures: [HomepageImage]
+        @proxy(from: "entityPayload.attributes.metadata.pictures")
       html: String! @richText
       body: DatoCmsDatoCmsPageBodyStructuredText
     }
