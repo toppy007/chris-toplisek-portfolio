@@ -130,6 +130,7 @@ export type Widths =
   | "third"
   | "twothirds"
   | "fitContent"
+  | "objectFit"
 
 export const widths: Record<Widths, string> = styleVariants(
   {
@@ -139,7 +140,9 @@ export const widths: Record<Widths, string> = styleVariants(
     third: "33.3333%",
     twothirds: "33.3333%",
     fitContent: "fit-content",
+    objectFit: "cover",
   },
+
   (width) => [
     {
       width: "100%",
@@ -151,6 +154,35 @@ export const widths: Record<Widths, string> = styleVariants(
     },
   ]
 )
+
+export type Heights =
+  | "full"
+  | "half"
+  | "quarter"
+  | "third"
+  | "twothirds"
+  | "fitContent";
+
+export const heights: Record<Heights, string> = styleVariants(
+  {
+    full: "100%",
+    half: "50%",
+    quarter: "400px",
+    third: "450px",
+    twothirds: "66.6666%",
+    fitContent: "fit-content",
+  },
+  (height) => [
+    {
+      height: "100%",
+      "@media": {
+        [media.small]: {
+          height,
+        },
+      },
+    },
+  ]
+);
 
 export const list = style({
   listStyle: "none",
@@ -559,7 +591,7 @@ export const buttons: Record<ButtonVariants, string> = styleVariants({
   ],
 })
 
-export type Backgrounds = "primary" | "muted"
+export type Backgrounds = "primary" | "muted" | "white"
 
 export const backgrounds: Record<Backgrounds, string> = styleVariants({
   primary: {

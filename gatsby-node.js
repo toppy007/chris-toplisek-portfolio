@@ -227,6 +227,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
       id: ID!
       heading: String
       href: String
+      date: String
       description: String
       image: HomepageImage
     }

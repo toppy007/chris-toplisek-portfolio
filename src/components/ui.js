@@ -51,6 +51,7 @@ export function Flex({
 export function Box({
   width = "full",
   background,
+  height,
   padding,
   paddingY,
   radius,
@@ -64,6 +65,7 @@ export function Box({
     <Base
       cx={[
         styles.widths[width],
+        styles.heights[height],
         background && styles.backgrounds[background],
         padding && styles.padding[padding],
         paddingY && styles.paddingY[paddingY],
@@ -161,8 +163,27 @@ export function NavButtonLink({ ...props }) {
   return <Base as="button" cx={[styles.navButtonlink]} {...props} />
 }
 
-export function ProjectButtom({ ...props }) {
-  return <Base as="button" cx={[styles.buttonProjectlink]} {...props} />
+export function ProjectButtom({ 
+  width = "full",
+  textAlign = "left",
+  variant,
+  background,
+  height,
+  cx: _cx = [],
+  
+  ...props }) {
+  return <Base as="button" 
+
+  cx={[
+    styles.flex,
+    variant && styles.flexVariants[variant],
+    styles.buttonProjectlink,
+    styles.widths[width],
+    styles.heights[height],
+    background && styles.backgrounds[background],
+    { textAlign },
+  
+  ]} {...props} />
 }
 
 export function Button({ variant = "primary", ...props }) {

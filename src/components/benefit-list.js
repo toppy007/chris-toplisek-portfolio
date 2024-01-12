@@ -5,6 +5,7 @@ import { Container, Section, FlexList, Box, Heading, Text, Space, ProjectButtom,
 import { motion } from 'framer-motion';
 
 function Benefit(props) {
+
   return (
       <Box width="third" padding={2} paddingY={2}>
         <motion.div
@@ -12,23 +13,24 @@ function Benefit(props) {
           onHoverStart={e => {}}
           onHoverEnd={e => {}}
         >
-        <ProjectButtom >
+        <ProjectButtom variant="column" background="white" height="third" >
           <Link to={props.href}>
-
-    
-          {props.image && (
-            <GatsbyImage
-            alt={props.image.alt}
-            image={props.image.gatsbyImageData}
-            />
-            )}
-
+            <Box height="quarter">
+              {props.image && (
+              <GatsbyImage
+              alt={props.image.alt}
+              image={props.image.gatsbyImageData}
+              style={{ width: '100%', height: '100%' }}
+              />
+              )}
+            </Box>
           </Link>
           <Space size={2} />
-          <Heading variant="subhead">{props.heading}</Heading>
-          <Text variant="lead">{props.href}</Text>
-          <Text variant="lead">{props.description}</Text>
+        <Heading variant="caps" >{props.heading}</Heading>
         </ProjectButtom>
+        <Space size={2} />
+        <Text> {props.date}</Text>
+        <Text variant="bold"> {props.description}</Text>
       </motion.div>
     </Box>
   )
@@ -59,6 +61,7 @@ export const query = graphql`
       id
       heading
       href
+      date
       description
       image {
         id
