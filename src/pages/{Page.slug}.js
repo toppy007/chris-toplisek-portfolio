@@ -1,5 +1,6 @@
 import * as React from "react"
 import Slider from "react-slick";
+import "../components/custom-slick-styles.css";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { graphql } from "gatsby"
@@ -25,6 +26,7 @@ export default function Page(props) {
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
+
   };
 
   return (
@@ -52,6 +54,7 @@ export default function Page(props) {
                     <GatsbyImage
                       alt={picture.alt}
                       image={picture.image.gatsbyImageData}
+                      style={{ width: '100%', height: '100%' }}
                       />
 
                 ))}

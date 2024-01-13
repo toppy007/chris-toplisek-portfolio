@@ -1,0 +1,5 @@
+/* Override Slick Carousel styles here */
+
+.slick-list {
+  height: 600px;
+}
