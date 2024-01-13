@@ -29,7 +29,7 @@ function Benefit(props) {
         <Heading variant="caps" >{props.heading}</Heading>
         </ProjectButtom>
         <Space size={2} />
-        <Text> {props.date}</Text>
+        <Text > {props.date}</Text>
         <Text variant="bold"> {props.description}</Text>
       </motion.div>
     </Box>
