@@ -16,7 +16,7 @@ export default function Form(props) {
   }
 
   return (
-    <Section padding={4}>
+    <Section id='contact' padding={4}>
       <Container width="narrow">
         <Box center paddingY={4}>
           <Heading>

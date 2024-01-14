@@ -38,7 +38,7 @@ function Benefit(props) {
 
 export default function BenefitList(props) {
   return (
-    <Section>
+    <Section id='projects'>
       <Container>
         <Text center variant="lead"> {props.text} </Text>
         <Space size={4} />

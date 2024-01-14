@@ -16,7 +16,7 @@ export default function LogoList(props) {
   console.log(props)
   console.log(props.text)
   return (
-    <Section paddingY={4}>
+    <Section id="tech" paddingY={4}>
       <Container width="narrow">
       <motion.div {...fadeInUpAnimation}>
         <Text center variant="lead"> {props.text} </Text>

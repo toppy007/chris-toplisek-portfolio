@@ -5,6 +5,7 @@ import { Container, Flex, FlexList, Space, NavLink, Button, InteractiveIcon, Nud
 import { mobileNavOverlay, mobileNavLink, desktopHeaderNavWrapper, mobileHeaderNavWrapper, mobileNavSVGColorWrapper, } from "./header.css"
 import NavItemGroup from "./nav-item-group"
 import BrandLogo from "./brand-logo"
+import { AnchorLink } from "gatsby-plugin-anchor-links"
 
 export default function Header() {
   const data = useStaticQuery(graphql`
@@ -18,6 +19,7 @@ export default function Header() {
             ... on NavItem {
               href
               text
+              description
             }
             ... on NavItemGroup {
               name
@@ -61,17 +63,13 @@ export default function Header() {
           </NavLink>
           <nav>
             <FlexList gap={4} style={{ marginRight: '168.4px' }}>
+
               {navItems &&
                 navItems.map((navItem) => (
                   <li key={navItem.id}>
-                    {navItem.navItemType === "Group" ? (
-                      <NavItemGroup
-                        name={navItem.name}
-                        navItems={navItem.navItems}
-                      />
-                    ) : (
-                      <NavLink to={navItem.href}>{navItem.text}</NavLink>
-                    )}
+                      (
+                      <AnchorLink to={`/#${navItem.description}`}>{navItem.text}</AnchorLink>
+                    )
                   </li>
                 ))}
             </FlexList>

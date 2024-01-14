@@ -8,7 +8,7 @@ import Feature from "./feature"
 export default function FeatureList(props) {
 
   return (
-    <Section paddingY={4}>
+    <Section id='education' paddingY={4}>
       <Container width="narrow">
         <Text center variant="lead"> {props.text} </Text> 
         <Box paddingX={5}>
