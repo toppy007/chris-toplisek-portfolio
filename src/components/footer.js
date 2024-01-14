@@ -1,12 +1,10 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import {
-  Twitter,
-  Twitch,
   Instagram,
   Facebook,
-  Youtube,
   GitHub,
+  Linkedin,
 } from "react-feather"
 import {
   Container,
@@ -22,11 +20,6 @@ import {
 import BrandLogo from "./brand-logo"
 
 const socialMedia = {
-  TWITTER: {
-    url: "https://twitter.com",
-    name: "Twitter",
-    icon: <Twitter />,
-  },
   INSTAGRAM: {
     url: "https://instagram.com",
     name: "Instagram",
@@ -37,20 +30,15 @@ const socialMedia = {
     name: "Facebook",
     icon: <Facebook />,
   },
-  YOUTUBE: {
-    url: "https://youtube.com",
-    name: "YouTube",
-    icon: <Youtube />,
-  },
   GITHUB: {
     url: "https://github.com",
     name: "GitHub",
     icon: <GitHub />,
   },
-  TWITCH: {
-    url: "https://twitch.tv",
-    name: "Twitch",
-    icon: <Twitch />,
+  LINKEDIN: {
+    url: "https://linkedin.com",
+    name: "Linkedin",
+    icon: <Linkedin />,
   },
 }
 
