@@ -11,7 +11,7 @@ export default function Homepage(props) {
 
   const SectionWithInView = ({ blocktype, ...componentProps }) => {
     const [ref, inView] = useInView({
-      triggerOnce: false,
+      triggerOnce: true,
     });
 
     return (

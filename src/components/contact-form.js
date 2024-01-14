@@ -29,7 +29,7 @@ export default function Form(props) {
           <Flex>
             <Box padding={2}>
               <label htmlFor="email">Name</label>
-              <input className={styles.formElement} id="email" type="email" name="email" />
+              <input className={styles.formElement} id="name" type="name" name="email" />
               <ValidationError prefix="Email" field="email" errors={state.errors} />
             </Box>
             <Box padding={2}>

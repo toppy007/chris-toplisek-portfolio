@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import { Container, Box, Heading, Flex, Icon, Button,VisuallyHidden, Space } from "../components/ui"
+import { Container, Box, Heading, Flex, Space } from "../components/ui"
 import { GatsbyImage } from "gatsby-plugin-image"
 import SEOHead from "../components/head"
 import NextIcon from "../components/next-icon"
@@ -33,7 +33,7 @@ export default function Page(props) {
     <Layout>
       <Box paddingY={5}>
         <Container width="normal">
-          <Flex variant="spaceBetween">
+          <Flex variant="spaceBetween" >
             <Flex variant="wrap" gutter={5}> 
               <motion.div
                 whileHover={{ scale: 1.2 }}
