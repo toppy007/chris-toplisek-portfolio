@@ -19,6 +19,7 @@ export default function Homepage(props) {
 
   return (
     <Layout>
+
       {homepage.blocks.map((block) => {
         const { id, blocktype, ...componentProps } = block;
         return <SectionWithInView key={id} blocktype={blocktype} {...componentProps} />;

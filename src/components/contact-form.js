@@ -26,6 +26,7 @@ export default function Form(props) {
         </Box>
 
         <form className={styles.form} onSubmit={handleSubmit} name="contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" />
           <Flex>
             <Box padding={2}>
               <label htmlFor="email">Name</label>
