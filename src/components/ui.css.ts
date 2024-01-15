@@ -458,6 +458,7 @@ export const link = style({
 })
 
 export const navlink = style({
+  height: "100%",
   color: "inherit",
   textDecoration: "none",
   transitionProperty: "color",

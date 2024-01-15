@@ -54,7 +54,7 @@ export default function Header() {
   }, [isOpen])
 
   return (
-    <header style={{ position: 'sticky', top: 0, backgroundColor: '#fff', zIndex: 100 }}>
+    <header style={{ borderBottom: '3px solid #ff7f00', position: 'sticky', top: 0, backgroundColor: '#fff', zIndex: 100 }}>
       <Container className={desktopHeaderNavWrapper}>
         <Space size={2} />
         <Flex variant="spaceBetween">
