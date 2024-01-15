@@ -25,7 +25,7 @@ export default function Form(props) {
           {props.text && <Text>{props.text}</Text>}
         </Box>
 
-        <form className={styles.form} onSubmit={handleSubmit} name="contact" method="POST" data-netlify="true">
+        <form className={styles.form} onSubmit='submit' name="contact" method="POST" data-netlify="true">
         <input type="hidden" name="form-name" value="contact" />
           <Flex>
             <Box padding={2}>
