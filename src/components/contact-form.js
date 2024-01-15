@@ -25,12 +25,12 @@ export default function Form(props) {
           {props.text && <Text>{props.text}</Text>}
         </Box>
 
-        <form className={styles.form} onSubmit='submit' name="contact" method="POST" data-netlify="true">
-        <input type="hidden" name="form-name" value="contact" />
+        <form className={styles.form} onSubmit='submit' name="contact1" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact1" />
           <Flex>
             <Box padding={2}>
               <label htmlFor="email">Name</label>
-              <input className={styles.formElement} id="name" type="name" name="email" />
+              <input className={styles.formElement} id="name" type="name" name="neme" />
               <ValidationError prefix="Email" field="email" errors={state.errors} />
             </Box>
             <Box padding={2}>
