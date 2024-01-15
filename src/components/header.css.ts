@@ -9,11 +9,12 @@ export const desktopHeaderNavWrapper = style({
   "@media": {
     [media.small]: {
       display: "block",
-      paddingTop: theme.space[4],
+      paddingTop: theme.space[2],
+      paddingBottom: theme.space[3],
+      borderBottom: "1px solid #ff7f00",
     },
   },
-})
-
+});
 const mobileHeaderNavWrapperBase = style({
   display: "block",
   position: "relative",

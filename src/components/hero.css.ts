@@ -14,7 +14,7 @@ export const backgroundImageContainer = style({
 
 export const textContainer = style({
     position: "absolute",
-    top: "200px",
+    top: 0,
     left: 0,
     right: 0,
     bottom: 0,
@@ -22,7 +22,10 @@ export const textContainer = style({
     flexDirection: "column",
     justifyContent: "center",
     alignItems: "left",
-    padding: theme.space[5],
+    paddingTop: 0,
+    paddingBottom: theme.space[5],
+    paddingLeft: theme.space[5],
+    paddingRight: theme.space[5],
     maxWidth: theme.sizes.container
   });
 

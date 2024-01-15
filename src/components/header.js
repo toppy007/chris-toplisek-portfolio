@@ -1,11 +1,12 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { Menu, X } from "react-feather"
-import { Container, Flex, FlexList, Space, NavLink, Button, InteractiveIcon, Nudge, VisuallyHidden } from "./ui"
+import { Text, Box, Container, Flex, FlexList, Space, NavLink, Button, InteractiveIcon, Nudge, VisuallyHidden } from "./ui"
 import { mobileNavOverlay, mobileNavLink, desktopHeaderNavWrapper, mobileHeaderNavWrapper, mobileNavSVGColorWrapper, } from "./header.css"
 import NavItemGroup from "./nav-item-group"
 import BrandLogo from "./brand-logo"
 import { AnchorLink } from "gatsby-plugin-anchor-links"
+import { navItemText, navItemTextHover } from "./nav-item.css"
 
 export default function Header() {
   const data = useStaticQuery(graphql`
@@ -53,7 +54,7 @@ export default function Header() {
   }, [isOpen])
 
   return (
-    <header>
+    <header style={{ position: 'sticky', top: 0, backgroundColor: '#fff', zIndex: 100 }}>
       <Container className={desktopHeaderNavWrapper}>
         <Space size={2} />
         <Flex variant="spaceBetween">
@@ -67,9 +68,14 @@ export default function Header() {
               {navItems &&
                 navItems.map((navItem) => (
                   <li key={navItem.id}>
-                      (
-                      <AnchorLink to={`/#${navItem.description}`}>{navItem.text}</AnchorLink>
-                    )
+                      
+                        <Box>
+
+                      <AnchorLink className={`${navItemText} ${navItemTextHover}`} to={`/#${navItem.description}`}>
+                        {navItem.text}
+                      </AnchorLink>
+                        </Box>
+                    
                   </li>
                 ))}
             </FlexList>

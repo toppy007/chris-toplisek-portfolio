@@ -23,7 +23,7 @@ export function LogoItem(props, links) {
 
 export default function Hero(props) {
   return (
-    <Section style={{ position: 'relative' }} >
+    <Section style={{ paddingTop: 0, position: 'relative' }} >
       <Container className={backgroundImageContainer} width="wide">
         <motion.div {...fadeInUpAnimation}>
           {props.image && (
