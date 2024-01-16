@@ -9,18 +9,20 @@ export const form = style({
 
 export const formElement = style({
   fontFamily: "inherit",
-  fontSize: "inherit",
+  fontSize: theme.fontSizes[4],
+  color: colors.white,
   border: "none",
   width: "100%",
   marginTop: theme.space[2],
   background: colors.primary,
   padding: theme.space[3],
-
 });
+
 
 export const textarea = style({
   fontFamily: "inherit",
-  fontSize: "inherit",
+  fontSize: theme.fontSizes[4],
+  color: colors.white,
   border: "none",
   width: "100%",
   marginTop: theme.space[2],
@@ -36,11 +38,11 @@ export const button = style({
   padding: theme.space[3],
   justifySelf: "start",
   cursor: "pointer",
-  border: `1px solid ${theme.colors.active}`,  // Set border color to orange
+  border: `1px solid ${theme.colors.active}`,  
   borderRadius: "50px",  
   ":hover": {
-    backgroundColor: theme.colors.black,  // Change background color on hover
-    borderColor: theme.colors.white,  // Change border color on hover
+    backgroundColor: theme.colors.black, 
+    borderColor: theme.colors.white,  
   },
 });
 

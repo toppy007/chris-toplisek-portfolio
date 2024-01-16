@@ -9,7 +9,7 @@ import { Container, Section, Text, Box, Heading, Flex } from "./ui"
 export default function Form(props) {
   console.log('these are form props', props)
 
-  const [state, handleSubmit] = useForm("YOUR_FORM_ID");
+  const [state] = useForm("YOUR_FORM_ID");
 
   if (state.succeeded) {
     return <p>Thanks for your submission!</p>;
@@ -25,7 +25,7 @@ export default function Form(props) {
           {props.text && <Text>{props.text}</Text>}
         </Box>
 
-        <form className={styles.form} onSubmit='submit' name="contact1" method="POST" data-netlify="true">
+        <form autocomplete="off" className={styles.form} onSubmit='submit' name="contact1" method="POST" data-netlify="true">
         <input type="hidden" name="form-name" value="contact1" />
           <Flex>
             <Box padding={2}>
@@ -35,14 +35,15 @@ export default function Form(props) {
             </Box>
             <Box padding={2}>
               <label htmlFor="email">Email Address</label>
-              <input className={styles.formElement} id="email" type="email" name="email" />
+              <input role="presentation" autocomplete="off" className={styles.formElement} id="email" type="email" name="email"/>
+
               <ValidationError prefix="Email" field="email" errors={state.errors} />
             </Box>
           </Flex>
           <Flex>
             <Box padding={2}>
               <label htmlFor="message">Message</label>
-              <textarea className={styles.textarea} id="message" name="message" />
+              <textarea className={styles.textarea} id="message" name="message" rows={4}/>
               <ValidationError prefix="Message" field="message" errors={state.errors} />
             </Box>
           </Flex>

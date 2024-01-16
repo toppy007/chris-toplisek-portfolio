@@ -1,7 +1,7 @@
 import * as React from "react"
 import { graphql, useStaticQuery } from "gatsby"
 import { Menu, X } from "react-feather"
-import { Text, Box, Container, Flex, FlexList, Space, NavLink, Button, InteractiveIcon, Nudge, VisuallyHidden } from "./ui"
+import { Box, Container, Flex, FlexList, Space, NavLink, Button, InteractiveIcon, Nudge, VisuallyHidden } from "./ui"
 import { mobileNavOverlay, mobileNavLink, desktopHeaderNavWrapper, mobileHeaderNavWrapper, mobileNavSVGColorWrapper, } from "./header.css"
 import NavItemGroup from "./nav-item-group"
 import BrandLogo from "./brand-logo"
