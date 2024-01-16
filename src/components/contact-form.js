@@ -25,7 +25,12 @@ export default function Form(props) {
           {props.text && <Text>{props.text}</Text>}
         </Box>
 
-        <form autocomplete="off" className={styles.form} onSubmit='submit' name="contact1" method="POST" data-netlify="true">
+        <form autocomplete="off" className={styles.form} onSubmit='submit' netlify-honeypot="bot-field" name="contact1" method="POST" data-netlify="true">
+        <p style={{ display: "none" }}>
+          <label style={{ display: "none" }}>
+            Don’t fill this out if you’re human: <input name="bot-field" style={{ display: "none" }} />
+          </label>
+        </p>
         <input type="hidden" name="form-name" value="contact1" />
           <Flex>
             <Box padding={2}>
