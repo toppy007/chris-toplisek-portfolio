@@ -1,9 +1,7 @@
 import { graphql } from "gatsby"
 import * as React from "react"
-
 import { useForm, ValidationError } from "@formspree/react"
 import * as styles from "./contact-form.css";
-
 import { Container, Section, Text, Box, Heading, Flex } from "./ui"
 
 export default function Form(props) {
